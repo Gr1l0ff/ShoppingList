@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.main-header {
+  background: #dcdbe8;
+  background: linear-gradient(90deg, #dcdbe8 0%, #ad81ee 0%, #711bf1 100%, #9999f4 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+  width: 100%;
+  font-family: "Bebas Neue", sans-serif;
+}
+.main-header h2 {
+  font-size: 2.4rem;
+  color: #fff;
+}
+
+.main-nav {
+  background: #dcdbe8;
+  background: linear-gradient(90deg, #dcdbe8 0%, #ad81ee 0%, #711bf1 100%, #9999f4 100%);
+  height: 7vh;
+}
+.main-nav ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-nav ul li {
+  padding: 0 2rem;
+  list-style: none;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-nav ul li a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #fff;
+}
+.main-nav ul li:hover {
+  background: #c88be9;
+}
+
+.main-front {
+  width: 100%;
+  position: relative;
+  height: 85vh;
+}
+.main-front img {
+  padding-top: 2rem;
+  height: 75vh;
+  width: 60%;
+  margin: 0 20%;
+}
+.main-front h2 {
+  padding-left: 5rem;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 9rem;
+  font-size: 5rem;
+}
+
