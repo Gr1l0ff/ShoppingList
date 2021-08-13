@@ -19,17 +19,19 @@
     </header>
     <nav class="main-nav">
       <ul>
-        <li><a href="">Domov</a></li>
+        <li><a href="{{ route('/') }}">Domov</a></li>
         <li><a href="">Voziček</a></li>
         <li><a href="">Domov</a></li>
-        <li><a href="">Domov</a></li>
+        <li><a href="{{ route('login') }}">Prijava</a></li>
       </ul>
     </nav>
 
     @yield('content')
 
 
-
+    <footer class="main-footer">
+      <p>Copyright &copy; all rights reserved Grily</p>
+    </footer>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
