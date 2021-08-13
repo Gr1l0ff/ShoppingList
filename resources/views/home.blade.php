@@ -3,8 +3,8 @@
 @section('content')
 
 <main class="main-front">
-  <h2> Dobrodošli na naši spletni strani </h2>
-  <img src="{{ asset('img/shopcart.png') }}" alt="shoppingcart">
+  <h2 class="heading-home"> Dobrodošli na naši spletni strani </h2>
+  <img class="heading-picture" src="{{ asset('img/shopcart.png') }}" alt="shoppingcart">
 </main>
 
 <section class="features">

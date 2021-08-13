@@ -3,9 +3,18 @@
 @section('content')
 
 <main class="main-register">
+  @if ($errors->any())
+  @foreach ($errors->all() as $error)
+      <div class="reg-error">
+         <p class="m">{{ $error }}</p>
+         <i class="fa fa-remove err-close"></i>
+      </div>
+  @endforeach 
+  @endif
   <div class="register">
     <h2>Registrirajte se</h2>
-    <form>
+    <form method="POST" action="{{ route('register') }}">
+      @csrf
       <div class="form-control">
         <label for="name">Ime:</label>
       </div>
@@ -31,11 +40,12 @@
         <input type="password" name="password" id="password">
       </div>
       <div class="form-control">
-        <label for="password_confirmed">Ponovi Geslo:</label>
+        <label for="password_confirmation">Ponovi Geslo:</label>
       </div>
       <div class="form-control">
-        <input type="password_confirmed" name="password_confirmed" id="password_confirmed">
+        <input type="password" name="password_confirmation" id="password_confirmation">
       </div>
+      <br>
       <div class="btn-login">
         <button type="submit">Registracija</button>
       </div>

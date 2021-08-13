@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages.css') }}">
     <title>Document</title>
 </head>
 
@@ -22,7 +23,16 @@
         <li><a href="{{ route('/') }}">Domov</a></li>
         <li><a href="">Voziček</a></li>
         <li><a href="">Domov</a></li>
-        <li><a href="{{ route('login') }}">Prijava</a></li>
+        @guest
+          <li><a href="{{ route('login') }}">Prijava</a></li>
+        @endguest
+        @auth
+        <li><form action="{{ route('logout') }}" method="POST">
+          @csrf
+          <button class="submit">Odjava</button>
+        </form>
+        @endauth</li>
+       
       </ul>
     </nav>
 
