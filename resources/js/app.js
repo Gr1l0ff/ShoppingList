@@ -9,11 +9,20 @@ $(document).ready(function(){
   });
 
   $(".heading-home").fadeIn(3000);
-  // $(".heading-picture").fadeIn(2000);
+
 
   $(".login").fadeIn(3000);
   $(".register").animate({opacity:1, 'min-height':"58vh"}, 1000);
+  
 
-
+  $(window).scroll(function(){
+  
+    let scroll = $(window).scrollTop();
+   
+    if(scroll > 130){
+      $(".feature").fadeIn(3000);
+    }
+   
+});
 
 });
