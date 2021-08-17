@@ -27,6 +27,7 @@
           <li><a href="{{ route('login') }}">Prijava</a></li>
         @endguest
         @auth
+        <li><a href="{{ route('list') }}">Vaš list</a></li>
         <li><form action="{{ route('logout') }}" method="POST">
           @csrf
           <button class="submit">Odjava</button>

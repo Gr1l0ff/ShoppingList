@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ItemsController;
+use App\Http\Controllers\ListController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -27,5 +28,10 @@ Route::post('/logout',  [LoginController::class, 'logOut'])->name('logout')->mid
 Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store'])->name('register')->middleware('guest');
 
-Route::get('/items', [ItemsController::class, 'index'])->name('items')->middleware('guest');
-Route::post('/items', [ItemsController::class, 'store'])->name('items')->middleware('guest');
+Route::get('/items', [ItemsController::class, 'index'])->name('items')->middleware('auth');
+Route::post('/items', [ItemsController::class, 'store'])->name('items')->middleware('auth');
+
+Route::get('/list', [ListController::class, 'index'])->name('list')->middleware('auth');
+Route::get('/add_list/{id}', [ListController::class, 'store'])->name('add_list')->middleware('auth');
+
+Route::get('/search', [ItemsController::class, 'search'])->name('search')->middleware('auth');

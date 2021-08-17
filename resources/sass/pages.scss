@@ -171,9 +171,10 @@ $third-color: #5d2fa8;
  h2 {
    font-family: 'Caveat';
    padding-top: 1.2rem;
+   padding-bottom: 1.2rem;
    text-align:  center;
    font-size: 2rem;
-   height: 8vh;
+   min-height: 8vh;
    background: $secondary-color;
    color: white;
 
@@ -204,4 +205,54 @@ $third-color: #5d2fa8;
   width: 40%;
   margin: 0.5rem auto;
   border-radius: 5px;
+}
+.search-item {
+  border: 1px solid;
+  height: 2rem;
+  padding: 0.5rem;
+  width: 80%;
+  margin: 0.6rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  button {
+    border: none;
+    background: crimson;
+    color: white;
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 5px;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+ 
+}
+.shopping-list {
+  margin: 1rem 0;
+  h3 {
+    text-align: center;
+  }
+ 
+}
+.Items-list{
+  margin-top: 0.8rem;
+  width: 100%;
+  li {
+    
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 0.6rem;
+    border: 1px solid;
+    padding: 0.6rem;
+    text-align: center;
+    list-style-position: inside;
+    font-size: 1.2rem
+  }
+}
+.search-bar {
+
+  margin-bottom: 1.5rem;
 }

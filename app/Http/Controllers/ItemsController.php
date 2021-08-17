@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Items;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ItemsController extends Controller
 {
@@ -36,6 +37,14 @@ class ItemsController extends Controller
 
     return redirect('/');
     
+    
+  }
+  public function search(){
+
+
+    $items =  DB::table('items')->get();
+    
+    return json_encode($items);
     
   }
 }

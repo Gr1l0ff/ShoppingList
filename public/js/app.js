@@ -1859,6 +1859,54 @@ $(document).ready(function () {
       $(".feature").fadeIn(3000);
     }
   });
+  $('.search-button').click(function () {
+    $.ajax('/search', {
+      success: function success(data, status, xhr) {
+        var foods = JSON.parse(data);
+        foods.forEach(function (food) {
+          console.log('lol');
+          console.log(food);
+        });
+      }
+    });
+  });
+  $('.search-bar').keyup(function () {
+    $.ajax('http://127.0.0.1:8000/search', {
+      success: function success(data, status, xhr) {
+        var item = $('.search-bar').val();
+        item = item.toLowerCase();
+        $('.search-list').empty();
+        var foods = JSON.parse(data); // foods.forEach(food => {
+        //   console.log(food.name);
+        // });
+        // let filteredFood = foods.filter(function (food) {
+        //   if(item.includes(food.name.toLowerCase())){
+        //     console.log("completed");
+        //     return food;
+        //   }
+        // });
+
+        var counter = 0;
+        foods.forEach(function (food) {
+          if (food.name.toLowerCase().includes(item) && item != "") {
+            counter++;
+            $('.search-list').append('<div class="search-item"><p>' + food.name + '</p><p>' + food.price + '€</p>' + '<button><a href="/add_list/' + food.id + '">Dodaj Izdelek</a></button>' + '</div>');
+          }
+        });
+
+        if (counter == 0 && item != "") {
+          $('.search-list').empty();
+          $('.search-list').append('<div class="search-item">' + 'Ni izdelkov na rezultat ' + item + '</div>');
+        } // let foods = JSON.parse(data)
+        //   foods.forEach(food => {
+        //     console.log('lol');
+        //     console.log()
+        //     console.log(food);
+        //   });
+
+      }
+    });
+  });
 });
 
 /***/ }),

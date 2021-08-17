@@ -14,5 +14,10 @@ class Items extends Model
       'price'
       
   ];
+  
+  public function item()
+  {
+      return $this->belongsTo(Items::class);
+  }
 
 }
