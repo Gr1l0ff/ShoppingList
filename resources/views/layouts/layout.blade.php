@@ -22,12 +22,14 @@
       <ul>
         <li><a href="{{ route('/') }}">Domov</a></li>
         <li><a href="">Voziček</a></li>
-        <li><a href="">Domov</a></li>
         @guest
           <li><a href="{{ route('login') }}">Prijava</a></li>
         @endguest
         @auth
         <li><a href="{{ route('list') }}">Vaš list</a></li>
+        @if(auth()->user()->email == 'andraz.gril@gmail.com')
+          <li><a href="{{ route('items') }}">Dodaj Izdelek</a></li>
+        @endif
         <li><form action="{{ route('logout') }}" method="POST">
           @csrf
           <button class="submit">Odjava</button>

@@ -34,4 +34,8 @@ Route::post('/items', [ItemsController::class, 'store'])->name('items')->middlew
 Route::get('/list', [ListController::class, 'index'])->name('list')->middleware('auth');
 Route::get('/add_list/{id}', [ListController::class, 'store'])->name('add_list')->middleware('auth');
 
+Route::get('/delete_list/{id}', [ListController::class, 'destroy'])->name('delete_list')->middleware('auth');
+
+Route::get('/update_list/{id}', [ListController::class, 'update'])->name('update_list')->middleware('auth');
+
 Route::get('/search', [ItemsController::class, 'search'])->name('search')->middleware('auth');

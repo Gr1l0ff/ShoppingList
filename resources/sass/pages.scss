@@ -59,6 +59,7 @@ $third-color: #5d2fa8;
     i {
       font-size: 3rem;
       color: #fff;
+      margin: 1rem 0;
     }
     h3 {
       font-size: 1.8rem;
@@ -213,6 +214,7 @@ $third-color: #5d2fa8;
   width: 80%;
   margin: 0.6rem auto;
   display: flex;
+  font-size: 1.2rem;
   align-items: center;
   justify-content: space-between;
 
@@ -242,14 +244,27 @@ $third-color: #5d2fa8;
   width: 100%;
   li {
     
+    display: flex;
+    justify-content: space-around;
     width: 80%;
     margin: 0 auto;
     margin-top: 0.6rem;
     border: 1px solid;
-    padding: 0.6rem;
+    padding: 0.5rem;
     text-align: center;
     list-style-position: inside;
-    font-size: 1.2rem
+    font-size: 1.4rem;
+    p {
+      a {
+        color: $secondary-color;
+      }
+    }
+    
+  
+    
+  }
+  .unfinished {
+    text-decoration: line-through;
   }
 }
 .search-bar {

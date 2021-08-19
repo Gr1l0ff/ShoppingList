@@ -32,7 +32,21 @@
       <ul class="Items-list">
           @foreach ($data as $item )
             
-           <li>{{ $item->name }} {{ $item->price }} €</li>
+          @if ($item->completed == false)
+          <li>
+            <p>{{ $item->name }}</p> 
+            <p> {{ $item->price }} €</p> 
+            <p><a href="{{ route('update_list', $item->id) }}"" onclick="return confirm('Ali ste kupili izdelek?')"><i class="fa fa-check-square"></i></a></p> 
+            <p><a href="{{ route('delete_list', $item->id) }}" onclick="return confirm('Ali hočete izbrisati izdelek?')"><i class="fa fa-close"></i></a></p>
+          </li>
+
+          @else
+          <li class="unfinished">
+            <p>{{ $item->name }}</p> 
+            <p> {{ $item->price }} €</p>  
+            <p><a href="{{ route('delete_list', $item->id) }}" onclick="return confirm('Ali hočete izbrisati izdelek?')"><i class="fa fa-close"></i></a></p>
+          </li>
+          @endif
       
           @endforeach
           

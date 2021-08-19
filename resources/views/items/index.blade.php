@@ -46,7 +46,7 @@
         <button type="submit">Vnesi izdelek</button>
       </div>
     </form>
-    <button class="search-button">Hello</button>
+
   </div>
 </main>
 

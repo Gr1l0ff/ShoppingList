@@ -9,6 +9,11 @@ class Lists extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+      'completed',
+      
+      
+  ];
 
     public function user()
     {

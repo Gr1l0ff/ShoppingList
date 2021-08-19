@@ -16,6 +16,7 @@ class ListController extends Controller
     $lists =  DB::table('lists')
     ->join('items', 'items.id', '=', 'lists.item_id')
             ->select('lists.*', 'items.name', 'items.price')
+            ->where('user_id', Auth::user()->id)
             ->get();
 
     // dd($lists);
@@ -28,6 +29,7 @@ class ListController extends Controller
     $item = Items::findOrFail($id);
     
     DB::table('lists')->insert([
+      'completed' => false,
       'user_id' => Auth::user()->id,
       'item_id' => $id,
       'created_at' => date('Y-m-d'),
@@ -40,5 +42,36 @@ class ListController extends Controller
     
      
     return redirect()->back();
+  }
+  
+  public function destroy($id){
+
+    $list = Lists::find($id);
+
+
+    if(auth()->user()->id == $list->user_id){
+
+    $list->delete();
+
+    } 
+
+    return redirect()->back();
+
+  }
+
+  public function update($id){
+
+    $list = Lists::find($id);
+
+    if(auth()->user()->id == $list->user_id){
+
+      $list->completed = true;
+
+      $list->save();
+      
+    }
+    
+    return redirect()->back();
+   
   }
 }

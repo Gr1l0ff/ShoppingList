@@ -15,6 +15,7 @@ class CreateListsTable extends Migration
     {
         Schema::create('lists', function (Blueprint $table) {
             $table->id();
+            $table->boolean('completed');
             $table->foreignId('user_id')
             ->onUpdate('cascade')
             ->onDelete('cascade');

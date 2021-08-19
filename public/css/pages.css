@@ -46,6 +46,7 @@
 .features .feature i {
   font-size: 3rem;
   color: #fff;
+  margin: 1rem 0;
 }
 .features .feature h3 {
   font-size: 1.8rem;
@@ -182,6 +183,7 @@
   width: 80%;
   margin: 0.6rem auto;
   display: flex;
+  font-size: 1.2rem;
   align-items: center;
   justify-content: space-between;
 }
@@ -210,14 +212,22 @@
   width: 100%;
 }
 .Items-list li {
+  display: flex;
+  justify-content: space-around;
   width: 80%;
   margin: 0 auto;
   margin-top: 0.6rem;
   border: 1px solid;
-  padding: 0.6rem;
+  padding: 0.5rem;
   text-align: center;
   list-style-position: inside;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+}
+.Items-list li p a {
+  color: #502694;
+}
+.Items-list .unfinished {
+  text-decoration: line-through;
 }
 
 .search-bar {

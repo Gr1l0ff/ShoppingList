@@ -19,19 +19,19 @@
         <label for="name">Ime:</label>
       </div>
       <div class="form-control">
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" value="{{ old('name') }}" id="name">
       </div>
       <div class="form-control">
         <label for="surrname">Priimek:</label>
       </div>
       <div class="form-control">
-        <input type="text" name="surrname" id="surrname">
+        <input type="text" name="surrname"  value="{{ old('surrname') }}" id="surrname">
       </div>
       <div class="form-control">
         <label for="email">Email:</label>
       </div>
       <div class="form-control">
-        <input type="email" name="email" id="email">
+        <input type="email" name="email"  value="{{ old('email') }}" id="email">
       </div>
       <div class="form-control">
         <label for="password">Geslo:</label>

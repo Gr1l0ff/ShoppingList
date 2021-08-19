@@ -19,7 +19,7 @@
         <label for="email">Email:</label>
       </div>
       <div class="form-control">
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" value="{{ old('email') }}" id="email">
       </div>
       <div class="form-control">
         <label for="password">Geslo:</label>
