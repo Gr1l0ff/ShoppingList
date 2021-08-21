@@ -21,7 +21,7 @@
     <nav class="main-nav">
       <ul>
         <li><a href="{{ route('/') }}">Domov</a></li>
-        <li><a href="">Voziček</a></li>
+        <li><a href="{{ route('about') }}">O nas</a></li>
         @guest
           <li><a href="{{ route('login') }}">Prijava</a></li>
         @endguest

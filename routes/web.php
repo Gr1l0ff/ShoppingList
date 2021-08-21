@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\LoginController;
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
   return view('home');
 })->name('/');
+
+Route::get('/about',  [AboutController::class, 'index'])->name('about')->middleware('guest');
 
 Route::get('/login',  [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login',  [LoginController::class, 'logIn'])->name('login')->middleware('guest');

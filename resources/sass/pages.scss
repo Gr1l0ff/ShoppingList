@@ -271,3 +271,23 @@ $third-color: #5d2fa8;
 
   margin-bottom: 1.5rem;
 }
+
+// about
+
+.main-about {
+  width: 70%;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+  img {
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+}

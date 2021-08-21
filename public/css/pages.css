@@ -233,3 +233,20 @@
 .search-bar {
   margin-bottom: 1.5rem;
 }
+
+.main-about {
+  width: 70%;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.main-about img {
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+.main-about p {
+  font-size: 1.2rem;
+}
